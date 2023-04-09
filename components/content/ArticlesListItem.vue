@@ -41,7 +41,7 @@ defineProps({
         <!-- maybe make option for this src, online image or local image -->
         <NuxtImg
           v-else
-          src="https://source.unsplash.com/random"
+          src="https://source.unsplash.com/random?alpine"
           alt="Default Cover Image"
           width="16"
           height="9"
