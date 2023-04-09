@@ -28,7 +28,8 @@
 const { page } = useContent();
 const route = useRoute();
 
-const defaultCover = "https://source.unsplash.com/random?alpine"; // default cover image
+// const defaultCover = "https://source.unsplash.com/random?alpine"; // default cover image
+const defaultCover = "/default-cover.webp"; // default cover image
 
 useHead({
   meta: [{ property: "og:image", content: page.value.cover || defaultCover }],

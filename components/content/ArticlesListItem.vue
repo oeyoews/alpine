@@ -40,9 +40,10 @@ defineProps({
         />
         <!-- maybe make option for this src, online image or local image -->
         <!-- https://unsplash.com/documentation#hotlinking -->
+        <!-- src="https://source.unsplash.com/random?alpine" -->
         <NuxtImg
           v-else
-          src="https://source.unsplash.com/random?alpine"
+          src="/default-cover.webp"
           alt="Default Cover Image"
           width="16"
           height="9"
