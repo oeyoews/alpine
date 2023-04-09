@@ -2,5 +2,5 @@
   "github": {
     "silent": true
   },
-  "outputDirectory": ".docs/dist"
+  "outputDirectory": "public"
 }
