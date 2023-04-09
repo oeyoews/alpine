@@ -1,3 +1,6 @@
 {
-  "outputDirectory": ".docs"
+  "github": {
+    "silent": true
+  },
+  "outputDirectory": ".docs/dist"
 }
