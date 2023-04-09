@@ -1,20 +1,30 @@
 <script setup lang="ts">
-const alpine = useAppConfig().alpine
+const alpine = useAppConfig().alpine;
 
 defineProps({
   padded: {
     type: Boolean,
-    default: true
-  }
-})
+    default: true,
+  },
+});
 
 useHead({
-  meta: [
-    { name: 'twitter:card', content: 'summary_large_image' }
-  ]
-})
+  meta: [{ name: "twitter:card", content: "summary_large_image" }],
+  link: [
+    {
+      rel: "icon",
+      type: "image/x-icon",
+      href: "/favicon.ico",
+    },
+    {
+      rel: "icon",
+      type: "image/png",
+      href: "/favicon.png",
+    },
+  ],
+});
 
-useContentHead(alpine as any)
+useContentHead(alpine as any);
 </script>
 
 <template>
