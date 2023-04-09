@@ -1,32 +1,51 @@
 <script setup lang="ts">
 type Article = {
-  _path: string
-  title: string
-  date: string
-  description: string
-}
+  _path: string;
+  title: string;
+  date: string;
+  description: string;
+};
 
 defineProps({
   article: {
     type: Object,
     required: true,
     validator: (value: Article) => {
-      if (value?._path && value.title) { return true }
-      return false
-    }
+      if (value?._path && value.title) {
+        return true;
+      }
+      return false;
+    },
   },
   featured: {
     type: Boolean,
-    default: false
-  }
-})
+    default: false,
+  },
+});
 </script>
 
 <template>
-  <article v-if="article._path && article.title" :class="{ 'featured': featured }">
+  <article
+    v-if="article._path && article.title"
+    :class="{ featured: featured }"
+  >
     <div class="image">
       <NuxtLink :to="article._path">
-        <NuxtImg v-if="article.cover" :src="article.cover" :alt="article.title" width="16" height="9" />
+        <NuxtImg
+          v-if="article.cover"
+          :src="article.cover"
+          :alt="article.title"
+          width="16"
+          height="9"
+        />
+        <!-- maybe make option for this src, online image or local image -->
+        <NuxtImg
+          v-else
+          src="https://source.unsplash.com/random"
+          alt="Default Cover Image"
+          width="16"
+          height="9"
+        />
       </NuxtLink>
     </div>
 
