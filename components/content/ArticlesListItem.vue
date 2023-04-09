@@ -42,7 +42,7 @@ defineProps({
         <!-- https://unsplash.com/documentation#hotlinking -->
         <NuxtImg
           v-else
-          src="https://source.unsplash.com/random?alpine&fm=blurhash&auto=format"
+          src="https://source.unsplash.com/random?alpine"
           alt="Default Cover Image"
           width="16"
           height="9"
