@@ -3,17 +3,15 @@
     <!-- TODO: could be refactored as a transparent ButtonLink -->
     <NuxtLink :to="parentPath" class="back">
       <Icon name="ph:arrow-left" />
-      <span class="text-primary-900 dark:text-primary-100"> Back </span>
+      <span class="text-primary-900 dark:text-primary-100">
+        Back
+      </span>
     </NuxtLink>
     <header>
       <h1 v-if="page?.title" class="title">
         {{ page.title }}
       </h1>
-      <time
-        v-if="page?.date"
-        class="text-primary-700 dark:text-primary-400"
-        :datetime="page.date"
-      >
+      <time v-if="page?.date" class="text-primary-700 dark:text-primary-400" :datetime="page.date">
         {{ formatDate(page.date) }}
       </time>
     </header>
@@ -25,25 +23,24 @@
 </template>
 
 <script setup lang="ts">
-const { page } = useContent();
-const route = useRoute();
+const { page } = useContent()
+const route = useRoute()
 
 if (page.value && page.value.cover) {
   useHead({
-    meta: [{ property: "og:image", content: page.value.cover }],
-  });
-} else {
-  const defaultCover = "https://source.unsplash.com/random";
-  useHead({
-    meta: [{ property: "og:image", content: defaultCover }],
-  });
+    meta: [
+      { property: 'og:image', content: page.value.cover }
+    ]
+  })
 }
 
-const parentPath = computed(() => {
-  const pathTabl = route.path.split("/");
-  pathTabl.pop();
-  return pathTabl.join("/");
-});
+const parentPath = computed(
+  () => {
+    const pathTabl = route.path.split('/')
+    pathTabl.pop()
+    return pathTabl.join('/')
+  }
+)
 </script>
 
 <style scoped lang="ts">
